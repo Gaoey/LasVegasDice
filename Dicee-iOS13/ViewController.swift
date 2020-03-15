@@ -21,16 +21,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rollButton(_ sender: UIButton) {
-        let first = Int.random(in: 1..<6)
-        let second = Int.random(in: 1..<6)
-        
-        diceImageView1.image = getDice(a: first)
-        diceImageView2.image = getDice(a: second)
+        diceImageView1.image = getDice().randomElement()
+        diceImageView2.image = getDice().randomElement()
     }
     
     
-    func getDice(a: Int) -> UIImage{
-        return  [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][a]
+    func getDice() -> [UIImage]{
+        return  [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
     }
 }
 
