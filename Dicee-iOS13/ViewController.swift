@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         diceImageView1.image = #imageLiteral(resourceName: "DiceOne")
         diceImageView2.image = #imageLiteral(resourceName: "DiceOne")
     }
-
+    
     @IBAction func rollButton(_ sender: UIButton) {
         let first = Int.random(in: 1..<6)
         let second = Int.random(in: 1..<6)
@@ -30,20 +30,8 @@ class ViewController: UIViewController {
     
     
     func getDice(a: Int) -> UIImage{
-        switch a {
-        case 1:
-            return #imageLiteral(resourceName: "DiceOne")
-        case 2:
-            return #imageLiteral(resourceName: "DiceTwo")
-        case 3:
-            return #imageLiteral(resourceName: "DiceThree")
-        case 4:
-            return #imageLiteral(resourceName: "DiceFour")
-        case 5:
-            return #imageLiteral(resourceName: "DiceFive")
-        default:
-            return #imageLiteral(resourceName: "DiceSix")
-        }
+        return  [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][a]
     }
 }
+
 
